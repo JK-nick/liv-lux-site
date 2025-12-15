@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment | The Olivia Experience</title>
+    <link rel="stylesheet" href="OSH_Style.css">
+
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+</head>
+
+<body>
+    <!-- NAVIGATION -->
+    <nav>
+      <a href="Index.html">Policies</a>
+      <a href="OS_Services.html">Services</a>
+      <a href="OS_About.html">About</a>
+      <a href="OS_Booking.html">Booking</a>
+    </nav>
+
+    <hr class="divider">
+
+    <!-- BOOKING FORM -->
+    <section class="BookingPage">
+        <h1>Book an Appointment</h1>
+
+        <p class="booking-intro">
+            Fill out the form below to request your braid appointment.
+            Once submitted, you will receive a follow-up message confirming your date and deposit details.
+        </p>
+
+        <form class="booking-form" id="bookingForm">
+            
+            <label>Full Name</label>
+            <input type="text" name="fullName" placeholder="Enter your name" required>
+
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="Enter your email" required>
+
+            <label>Phone Number</label>
+            <input type="tel" name="phone" placeholder="Enter your phone number" required>
+
+
+            <label>Select Service</label>
+
+            <select name="service" required>
+            <option value="" disabled selected>Select a service</option>
+
+            <optgroup label="BRAIDS">
+                <option value="Knotless Braids — Large">Knotless Braids — Large</option>
+                <option value="Knotless Braids — Medium">Knotless Braids — Medium</option>
+                <option value="Knotless Braids — Smedium">Knotless Braids — Smedium</option>
+                <option value="Knotless Braids — Small">Knotless Braids — Small</option>
+
+                <option value="Knotless Bob — Medium">Knotless Bob — Medium</option>
+                <option value="Knotless Bob — Smedium">Knotless Bob — Smedium</option>
+                <option value="Knotless Bob — Small">Knotless Bob — Small</option>
+
+                <option value="Fulani / Tribal Braids — Medium">Fulani / Tribal Braids — Medium</option>
+                <option value="Fulani / Tribal Braids — Smedium">Fulani / Tribal Braids — Smedium</option>
+                <option value="Fulani / Tribal Braids — Small">Fulani / Tribal Braids — Small</option>
+
+                <option value="Stitch / Feed-In Braids — 4–6 Stitch Braids">Stitch / Feed-In Braids — 4–6 Stitch Braids</option>
+                <option value="Stitch / Feed-In Braids — 8 Stitch Braids">Stitch / Feed-In Braids — 8 Stitch Braids</option>
+                <option value="Stitch / Feed-In Braids — 10 Stitch Braids">Stitch / Feed-In Braids — 10 Stitch Braids</option>
+                <option value="Stitch / Feed-In Braids — Alicia Keys Braids (Smedium)">Stitch / Feed-In Braids — Alicia Keys Braids (Smedium)</option>
+                <option value="Stitch / Feed-In Braids — Alicia Keys Braids (Small)">Stitch / Feed-In Braids — Alicia Keys Braids (Small)</option>
+            </optgroup>
+
+            <optgroup label="TWISTS">
+                <option value="Passion Twists — Medium">Passion Twists — Medium</option>
+                <option value="Passion Twists — Smedium">Passion Twists — Smedium</option>
+                <option value="Passion Twists — Small">Passion Twists — Small</option>
+
+                <option value="Island Twists — Medium">Island Twists — Medium</option>
+                <option value="Island Twists — Smedium">Island Twists — Smedium</option>
+                <option value="Island Twists — Small">Island Twists — Small</option>
+
+                <option value="Fulani Twists — Medium">Fulani Twists — Medium</option>
+                <option value="Fulani Twists — Smedium">Fulani Twists — Smedium</option>
+                <option value="Fulani Twists — Small">Fulani Twists — Small</option>
+            </optgroup>
+
+            <optgroup label="CURL BRAIDS">
+                <option value="French Curl Braids — Large">French Curl Braids — Large</option>
+                <option value="French Curl Braids — Medium">French Curl Braids — Medium</option>
+                <option value="French Curl Braids — Smedium">French Curl Braids — Smedium</option>
+                <option value="French Curl Braids — Small">French Curl Braids — Small</option>
+            </optgroup>
+
+            <optgroup label="LOCS">
+                <option value="Loc Styles — Soft Locs">Loc Styles — Soft Locs</option>
+                <option value="Loc Styles — Distressed Locs">Loc Styles — Distressed Locs</option>
+            </optgroup>
+
+            <optgroup label="NATURAL HAIR">
+                <option value="Natural Braids">Natural Braids</option>
+                <option value="Two-strand Twists">Two-strand Twists</option>
+            </optgroup>
+
+            <optgroup label="ADD-ONS & MAINTENANCE">
+                <option value="Boho Pieces (Add-on)">Boho Pieces (Add-on)</option>
+                <option value="Small Parts (Add-on)">Small Parts (Add-on)</option>
+                <option value="Smedium Parts (Add-on)">Smedium Parts (Add-on)</option>
+                <option value="Curly Ends (Add-on)">Curly Ends (Add-on)</option>
+                <option value="Extra Length (Add-on)">Extra Length (Add-on)</option>
+                <option value="Wash + Blow Dry (Add-on)">Wash + Blow Dry (Add-on)</option>
+            </optgroup>
+
+            <optgroup label="OTHER">
+                <option value="Consultation / Not sure yet">Consultation / Not sure yet</option>
+            </optgroup>
+            </select>
+
+            <p class="deposit-note">
+                A $20 non-refundable deposit is required to secure your appointment.
+            </p>
+
+            <div class="checkbox">
+                <input type="checkbox" id="policiesAgreed" required>
+                <label for="policiesAgreed">I have read and agree to the booking policies.</label>
+            </div>
+
+
+            <button type="submit" class="btn btn-outline">
+                Submit Request
+            </button>
+
+        </form>
+    </section>
+
+    <hr class="divider">
+
+    <div class="centered">
+        <a href="Index.html" class="btn btn-outline">Back to Home</a>
+    </div>
+
+    <footer>
+        © 2025 The Olivia Experience | All Rights Reserved  
+        <br><br>
+        <p>📞 Phone Number: 786-626-4138</p>
+        <p>📸 Instagram: <a href="https://www.instagram.com/livluxebraids_" target="_blank">
+                        livluxebraids_
+                    </a></p>
+        <p>📧 Email:oexperience05@gmail.com</p>
+        <p>Location: Broward, FL</p>
+    </footer>
+
+    <script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const CALENDLY = {
+        small:   "https://calendly.com/oexperience05/small-styles",
+        medium:  "https://calendly.com/oexperience05/medium-styles",
+        smedium: "https://calendly.com/oexperience05/smedium-styles",
+        large:   "https://calendly.com/oexperience05/large-styles",
+        consult: "https://calendly.com/oexperience05/30min"
+        };
+
+        function pickCalendlyUrl(serviceText) {
+        const s = (serviceText || "").toLowerCase();
+        if (s.includes("consultation") || s.includes("not sure")) return CALENDLY.consult;
+        if (s.includes("smedium")) return CALENDLY.smedium; // must come before "medium"
+        if (s.includes("small"))   return CALENDLY.small;
+        if (s.includes("medium"))  return CALENDLY.medium;
+        if (s.includes("large"))   return CALENDLY.large;
+        return CALENDLY.medium;
+        }
+
+        const form = document.getElementById("bookingForm");
+        if (!form) {
+        console.error("bookingForm not found. Check the form id.");
+        return;
+        }
+
+        form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // If Calendly script didn't load, you'll see this message in console
+        if (typeof Calendly === "undefined") {
+            alert("Calendly did not load. Refresh the page and try again.");
+            return;
+        }
+
+        const name = form.querySelector('input[name="fullName"]').value.trim();
+        const email = form.querySelector('input[name="email"]').value.trim();
+        const phone = form.querySelector('input[name="phone"]').value.trim();
+        const service = form.querySelector('select[name="service"]').value;
+
+        const calendlyUrl = pickCalendlyUrl(service);
+
+        Calendly.initPopupWidget({
+            url: `${calendlyUrl}?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&a1=${encodeURIComponent(service)}&a2=${encodeURIComponent(phone)}`
+        });
+        });
+    });
+    </script>
+
+</body>
+</html>

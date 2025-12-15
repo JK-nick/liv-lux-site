@@ -1,0 +1,489 @@
+/* ----------------------------------------------------
+   1. GLOBAL BODY + BACKGROUND
+---------------------------------------------------- */
+body {
+    background-image: url(BOC.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: auto;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* ----------------------------------------------------
+   2. TYPOGRAPHY (Global Headings + Paragraphs)
+---------------------------------------------------- */
+h1, h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    font-family: "Playfair Display", serif;
+}
+
+h1 {
+    font-size: 3rem;
+    letter-spacing: 1px;
+    color: #E6C670;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #E6C670;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: #F8EAD8;
+    font-style: italic;
+    margin-bottom: 15px;
+    font-family: "Cormorant Garamond", serif;
+}
+
+p {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.2rem;
+    line-height: 1.65;
+    color: #FFF3E0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    margin-top: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #E6C670;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #FFD86A;
+    text-shadow: 0 0 6px rgba(255, 216, 106, 0.5);
+}
+
+/* ----------------------------------------------------
+   3. HEADER
+---------------------------------------------------- */
+header {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding-top: 0;
+    color: #F8EAD8;
+}
+
+/* ----------------------------------------------------
+   4. NAVIGATION BAR
+---------------------------------------------------- */
+nav {
+    text-align: center;
+    margin: 25px 0;
+}
+
+nav a {
+    margin: 0 25px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #E6C670;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    transition: 0.2s ease;
+}
+
+nav a:hover {
+    color: #FFD86A;
+    transform: scale(1.08);
+}
+
+/* ----------------------------------------------------
+   5. DIVIDERS
+---------------------------------------------------- */
+.divider {
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #E6C670, transparent);
+    opacity: 0.9;
+    border: none;
+    margin: 10px auto;
+    animation: fadeInLine 2.5s ease-in-out forwards;
+}
+
+@keyframes fadeInLine {
+    0% { width: 0; opacity: 0; }
+    40% { width: 60%; opacity: 0.5; }
+    100% { width: 100%; opacity: 0.9; }
+}
+
+/* ----------------------------------------------------
+   6. GENERAL SECTION STYLING
+---------------------------------------------------- */
+section {
+    position: relative;
+    z-index: 1;
+    padding: 0px 8% 10px 8%;
+    color: #FEF9F3;
+    font-family: "Cormorant Garamond", serif;
+    line-height: 1.6;
+}
+
+section ul {
+    list-style-type: circle;
+    padding-left: 30px;
+    margin-bottom: 20px;
+    color: #FFF3E0;
+}
+
+section li {
+    margin-bottom: 8px;
+}
+
+section p, section ul {
+    margin-bottom: 14px;
+}
+
+/* Hover color effects */
+li:hover, h2:hover {
+    color: #FFD86A;
+    transition: color 0.3s ease-in-out;
+}
+
+.BookingCTA {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 10px;
+}
+
+.BookingCTA p {
+    max-width: 650px;
+    margin: 10px auto 25px auto;
+    line-height: 1.7;
+}
+
+/* ----------------------------------------------------
+   7. POLICIES SECTION
+---------------------------------------------------- */
+.Policies {
+    text-align: center;
+}
+
+.Policies ul {
+    text-align: left; /* bullets still clean */
+    display: inline-block;
+}
+
+.Policies h2 {
+    margin-top: 30px;
+}
+
+.Policies h3 {
+    margin-top: 15px;
+}
+
+/* ----------------------------------------------------
+   8. SERVICES SECTION
+---------------------------------------------------- */
+.Services {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+.Services h1 {
+    font-size: 2.5rem;
+    color: #E6C670;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+.Services p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: #FFF3E0;
+}
+
+.About {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+.About h1 {
+    margin-top: 20px;
+}
+
+.About p {
+    max-width: 700px;
+    margin: 10px auto 25px auto;
+    line-height: 1.7;
+}
+
+
+/* ----------------------------------------------------
+   9. BUTTONS
+---------------------------------------------------- */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-family: "Playfair Display", serif;
+    font-size: 1.1rem;
+    transition: 0.3s ease;
+}
+
+.btn-outline {
+    border: 2px solid #E6C670;
+    color: #E6C670;
+}
+
+.btn-outline:hover {
+    background-color: #E6C670;
+    color: #083F34;
+    transform: scale(1.05);
+}
+
+/* ----------------------------------------------------
+   10. FOOTER
+---------------------------------------------------- */
+footer {
+    text-align: center;
+    color: #E6C670;
+    font-family: "Cormorant Garamond", serif;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid #E6C670;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 2;
+}
+
+footer p {
+    margin: 2px 0;
+    line-height: 1.2;
+}
+
+
+/* ----------------------------------------------------
+   11. SERVICES TABLE STYLING
+---------------------------------------------------- */
+
+.service-table {
+    margin: 25px auto;
+    width: 90%;
+    max-width: 1100px;
+}
+
+.service-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(230, 198, 112, 0.3);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+.service-table th {
+    background: rgba(230, 198, 112, 0.25);
+    color: #E6C670;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 12px;
+    font-family: "Playfair Display", serif;
+}
+
+.service-table td {
+    padding: 12px;
+    color: #FFF3E0;
+    font-size: 1.05rem;
+    border-bottom: 1px solid rgba(230,198,112,0.25);
+}
+
+.service-table tr:last-child td {
+    border-bottom: none;
+}
+
+.service-table tr:hover {
+    background: rgba(230, 198, 112, 0.08);
+    transition: 0.2s ease;
+}
+
+.details-row {
+    display: none;
+    background: rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.details-content {
+    padding: 20px;
+    color: #FFF3E0;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.service-table tr:hover {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.07);
+}
+
+/* Make dropdown rows look like sub-items of the category */
+.content-row td {
+  font-size: 1rem;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+/* Indent the first column (Large/Medium/etc.) under the category name */
+.content-row td:first-child {
+  padding-left: 35px;
+  opacity: 0.95;
+}
+
+/* ----------------------------------------------------
+   ABOUT PAGE STYLING
+---------------------------------------------------- */
+
+.AboutPage {
+    text-align: center;
+    padding: 20px 8%;
+}
+
+.about-intro {
+    max-width: 700px;
+    margin: 10px auto 30px auto;
+    font-size: 1.2rem;
+}
+
+.about-placeholder {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 25px;
+    border: 1px solid rgba(230,198,112,0.25);
+    background: rgba(0,0,0,0.25);
+    border-radius: 10px;
+    line-height: 1.7;
+    font-size: 1.15rem;
+    color: #FFF3E0;
+}
+
+.about-photo {
+    text-align: center;
+    margin: 30px auto 40px auto;
+}
+
+.about-photo img {
+    width: 260px;
+    height: auto;
+    border-radius: 12px;
+    border: 4px solid #E6C670; /* Gold border */
+    box-shadow: 0 0 20px rgba(230, 198, 112, 0.45); /* Gold glow */
+    object-fit: cover;
+}
+
+
+/* ----------------------------------------------------
+   BOOKING PAGE STYLING
+---------------------------------------------------- */
+
+.BookingPage {
+    text-align: center;
+    padding: 20px 8%;
+}
+
+.booking-intro {
+    max-width: 700px;
+    margin: 10px auto 30px auto;
+    font-size: 1.2rem;
+}
+
+.booking-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    background: rgba(0,0,0,0.25);
+    padding: 25px 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(230,198,112,0.25);
+}
+
+.booking-form label {
+    display: block;
+    margin-top: 15px;
+    color: #E6C670;
+    font-family: "Playfair Display", serif;
+    font-size: 1.1rem;
+}
+
+.booking-form input,
+.booking-form select {
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+.deposit-note {
+    margin-top: 15px;
+    font-size: 1.05rem;
+    color: #FFF3E0;
+}
+
+.checkbox {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.centered {
+    text-align: center;
+}
+
+/* Hidden rows */
+.content-row {
+    display: none;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Clickable category row */
+.collapsible {
+    cursor: pointer;
+    background: rgba(230, 198, 112, 0.15);
+    transition: 0.2s;
+}
+
+.collapsible:hover {
+    background: rgba(230, 198, 112, 0.25);
+}
+
+/* Match dropdown row background to main table rows */
+.content-row td,
+.details-row td {
+    background: rgba(0, 0, 0, 0.18); /* same tone as main table rows */
+    color: #FFF3E0;                 /* same text color */
+    border-bottom: 1px solid rgba(230,198,112,0.20);
+}
+
+.collapsible {
+    background: rgba(230, 198, 112, 0.18); /* gold-tinted header row */
+}
+
+.collapsible:hover {
+    background: rgba(230, 198, 112, 0.25);
+}
