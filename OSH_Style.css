@@ -597,3 +597,13 @@ img {
     min-width: 620px;
   }
 }
+
+
+.corner-sticker {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 120px;          /* adjust size */
+  z-index: 1000;         /* keeps it above other elements */
+  pointer-events: none; /* optional: makes it non-clickable */
+}
