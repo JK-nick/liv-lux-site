@@ -606,5 +606,9 @@ img {
   height: auto;             /* keeps proportions */
   z-index: 1000;            /* keeps it above everything */
   pointer-events: none;     /* prevents blocking clicks */
+
+
+  transform: scale(1.25);   /* 👈 makes it 25% bigger */
+  transform-origin: top right;
 }
 
