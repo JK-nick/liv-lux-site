@@ -598,12 +598,13 @@ img {
   }
 }
 
-
 .corner-sticker {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 120px;          /* adjust size */
-  z-index: 1000;         /* keeps it above other elements */
-  pointer-events: none; /* optional: makes it non-clickable */
+  position: fixed;          /* stays in corner even when scrolling */
+  top: 20px;                /* distance from top */
+  right: 20px;              /* distance from right */
+  width: 120px;             /* controls size */
+  height: auto;             /* keeps proportions */
+  z-index: 1000;            /* keeps it above everything */
+  pointer-events: none;     /* prevents blocking clicks */
 }
+
