@@ -92,6 +92,8 @@ header {
 nav {
     text-align: center;
     margin: 25px 0;
+    position: relative;
+    z-index: 2; 
 }
 
 nav a {
@@ -99,8 +101,8 @@ nav a {
     font-size: 1.4rem;
     font-weight: 700;
     letter-spacing: 1px;
-    color: #E6C670;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    color: #E6C670; 
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.35);
     transition: 0.2s ease;
 }
 
