@@ -43,76 +43,82 @@
             <label>Phone Number</label>
             <input type="tel" name="phone" placeholder="Enter your phone number" required>
 
-
             <label>Select Service</label>
-
+            
             <select name="service" required>
-            <option value="" disabled selected>Select a service</option>
-
-            <optgroup label="BRAIDS">
+              <option value="" disabled selected>Select a service</option>
+            
+              <optgroup label="BRAIDS">
                 <option value="Knotless Braids — Large">Knotless Braids — Large</option>
                 <option value="Knotless Braids — Medium">Knotless Braids — Medium</option>
                 <option value="Knotless Braids — Smedium">Knotless Braids — Smedium</option>
                 <option value="Knotless Braids — Small">Knotless Braids — Small</option>
-
+            
                 <option value="Knotless Bob — Medium">Knotless Bob — Medium</option>
                 <option value="Knotless Bob — Smedium">Knotless Bob — Smedium</option>
                 <option value="Knotless Bob — Small">Knotless Bob — Small</option>
-
+            
                 <option value="Fulani / Tribal Braids — Medium">Fulani / Tribal Braids — Medium</option>
                 <option value="Fulani / Tribal Braids — Smedium">Fulani / Tribal Braids — Smedium</option>
                 <option value="Fulani / Tribal Braids — Small">Fulani / Tribal Braids — Small</option>
-
+            
                 <option value="Stitch / Feed-In Braids — 4–6 Stitch Braids">Stitch / Feed-In Braids — 4–6 Stitch Braids</option>
                 <option value="Stitch / Feed-In Braids — 8 Stitch Braids">Stitch / Feed-In Braids — 8 Stitch Braids</option>
                 <option value="Stitch / Feed-In Braids — 10 Stitch Braids">Stitch / Feed-In Braids — 10 Stitch Braids</option>
                 <option value="Stitch / Feed-In Braids — Alicia Keys Braids (Smedium)">Stitch / Feed-In Braids — Alicia Keys Braids (Smedium)</option>
                 <option value="Stitch / Feed-In Braids — Alicia Keys Braids (Small)">Stitch / Feed-In Braids — Alicia Keys Braids (Small)</option>
-            </optgroup>
-
-            <optgroup label="TWISTS">
+              </optgroup>
+            
+              <optgroup label="TWISTS">
                 <option value="Passion Twists — Medium">Passion Twists — Medium</option>
                 <option value="Passion Twists — Smedium">Passion Twists — Smedium</option>
                 <option value="Passion Twists — Small">Passion Twists — Small</option>
-
+            
                 <option value="Island Twists — Medium">Island Twists — Medium</option>
                 <option value="Island Twists — Smedium">Island Twists — Smedium</option>
                 <option value="Island Twists — Small">Island Twists — Small</option>
-
+            
                 <option value="Fulani Twists — Medium">Fulani Twists — Medium</option>
                 <option value="Fulani Twists — Smedium">Fulani Twists — Smedium</option>
                 <option value="Fulani Twists — Small">Fulani Twists — Small</option>
-            </optgroup>
-
-            <optgroup label="CURL BRAIDS">
+              </optgroup>
+            
+              <optgroup label="CURL BRAIDS">
                 <option value="French Curl Braids — Large">French Curl Braids — Large</option>
                 <option value="French Curl Braids — Medium">French Curl Braids — Medium</option>
                 <option value="French Curl Braids — Smedium">French Curl Braids — Smedium</option>
                 <option value="French Curl Braids — Small">French Curl Braids — Small</option>
-            </optgroup>
-
-            <optgroup label="LOCS">
+              </optgroup>
+            
+              <optgroup label="LOCS">
                 <option value="Loc Styles — Soft Locs">Loc Styles — Soft Locs</option>
                 <option value="Loc Styles — Distressed Locs">Loc Styles — Distressed Locs</option>
-            </optgroup>
-
-            <optgroup label="NATURAL HAIR">
+              </optgroup>
+            
+              <optgroup label="NATURAL HAIR">
                 <option value="Natural Braids">Natural Braids</option>
                 <option value="Two-strand Twists">Two-strand Twists</option>
-            </optgroup>
-
-            <optgroup label="ADD-ONS & MAINTENANCE">
-                <option value="Boho Pieces (Add-on)">Boho Pieces (Add-on)</option>
-                <option value="Small Parts (Add-on)">Small Parts (Add-on)</option>
-                <option value="Smedium Parts (Add-on)">Smedium Parts (Add-on)</option>
-                <option value="Curly Ends (Add-on)">Curly Ends (Add-on)</option>
-                <option value="Extra Length (Add-on)">Extra Length (Add-on)</option>
-                <option value="Wash + Blow Dry (Add-on)">Wash + Blow Dry (Add-on)</option>
-            </optgroup>
-
-            <optgroup label="OTHER">
+              </optgroup>
+            
+              <optgroup label="OTHER">
                 <option value="Consultation / Not sure yet">Consultation / Not sure yet</option>
-            </optgroup>
+              </optgroup>
+            </select>
+
+            <label>Select Add-on</label>
+            
+            <select name="addons">
+              <option value="No add-on" selected>No add-on</option>
+            
+              <optgroup label="ADD-ONS">
+                <option value="Boho Pieces">Boho Pieces</option>
+                <option value="Small Parts">Small Parts</option>
+                <option value="Smedium Parts">Smedium Parts</option>
+                <option value="Curly Ends">Curly Ends</option>
+                <option value="Extra Length">Extra Length</option>
+                <option value="Wash + Blow Dry">Wash + Blow Dry</option>
+                <option value="Extra Small">Extra Small (Hairstylist Approval Needed)</option>
+              </optgroup>
             </select>
 
             <p class="deposit-note">
@@ -188,13 +194,13 @@
         const email = form.querySelector('input[name="email"]').value.trim();
         const phone = form.querySelector('input[name="phone"]').value.trim();
         const service = form.querySelector('select[name="service"]').value;
-
+        
+        const addon = form.querySelector('select[name="addons"]').value;
+        
         const calendlyUrl = pickCalendlyUrl(service);
-
+        
         Calendly.initPopupWidget({
-            url: `${calendlyUrl}?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&a1=${encodeURIComponent(service)}&a2=${encodeURIComponent(phone)}`
-        });
-        });
+            url: `${calendlyUrl}?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&a1=${encodeURIComponent(service)}&a2=${encodeURIComponent(phone)}&a3=${encodeURIComponent(addon)}`                });
     });
     </script>
 
