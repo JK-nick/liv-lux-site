@@ -153,59 +153,56 @@
     </footer>
 
     <script>
-    window.addEventListener("DOMContentLoaded", () => {
+      window.addEventListener("DOMContentLoaded", () => {
         const CALENDLY = {
-        small:   "https://calendly.com/oexperience05/small-styles",
-        medium:  "https://calendly.com/oexperience05/medium-styles",
-        smedium: "https://calendly.com/oexperience05/smedium-styles",
-        large:   "https://calendly.com/oexperience05/large-styles",
-        consult: "https://calendly.com/oexperience05/30min"
+          small:   "https://calendly.com/oexperience05/small-styles",
+          medium:  "https://calendly.com/oexperience05/medium-styles",
+          smedium: "https://calendly.com/oexperience05/smedium-styles",
+          large:   "https://calendly.com/oexperience05/large-styles",
+          consult: "https://calendly.com/oexperience05/30min"
         };
-
+    
         function pickCalendlyUrl(serviceText) {
-        const s = (serviceText || "").toLowerCase();
-        if (s.includes("consultation") || s.includes("not sure")) return CALENDLY.consult;
-        if (s.includes("smedium")) return CALENDLY.smedium; // must come before "medium"
-        if (s.includes("small"))   return CALENDLY.small;
-        if (s.includes("medium"))  return CALENDLY.medium;
-        if (s.includes("large"))   return CALENDLY.large;
-        return CALENDLY.medium;
+          const s = (serviceText || "").toLowerCase();
+          if (s.includes("consultation") || s.includes("not sure")) return CALENDLY.consult;
+          if (s.includes("smedium")) return CALENDLY.smedium; // must come before "medium"
+          if (s.includes("small"))   return CALENDLY.small;
+          if (s.includes("medium"))  return CALENDLY.medium;
+          if (s.includes("large"))   return CALENDLY.large;
+          return CALENDLY.medium;
         }
-
+    
         const form = document.getElementById("bookingForm");
         if (!form) {
-        console.error("bookingForm not found. Check the form id.");
-        return;
+          console.error("bookingForm not found. Check the form id.");
+          return;
         }
-
+    
         form.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        // If Calendly script didn't load, you'll see this message in console
-        if (typeof Calendly === "undefined") {
-            alert("Calendly did not load. Refresh the page and try again.");
-            return;
-        }
-
-        const name = form.querySelector('input[name="fullName"]').value.trim();
-        const email = form.querySelector('input[name="email"]').value.trim();
-        const phone = form.querySelector('input[name="phone"]').value.trim();
-        const service = form.querySelector('select[name="service"]').value;
-        
-        const addon = form.querySelector('select[name="addons"]').value;
-        
-        const calendlyUrl = pickCalendlyUrl(service);
-        
-        const calendlyFullUrl =
-          `${calendlyUrl}?` +
-          `name=${encodeURIComponent(name)}` +
-          `&email=${encodeURIComponent(email)}` +
-          `&a1=${encodeURIComponent(service)}` +
-          `&a2=${encodeURIComponent(phone)}` +
-          `&a3=${encodeURIComponent(addon)}`;
-        
-        window.open(calendlyFullUrl, "_blank");
+          e.preventDefault();
+    
+          const name = form.querySelector('input[name="fullName"]').value.trim();
+          const email = form.querySelector('input[name="email"]').value.trim();
+          const phone = form.querySelector('input[name="phone"]').value.trim();
+          const service = form.querySelector('select[name="service"]').value;
+          const addon = form.querySelector('select[name="addons"]').value;
+    
+          const calendlyUrl = pickCalendlyUrl(service);
+    
+          const calendlyFullUrl =
+            `${calendlyUrl}?` +
+            `name=${encodeURIComponent(name)}` +
+            `&email=${encodeURIComponent(email)}` +
+            `&a1=${encodeURIComponent(service)}` +
+            `&a2=${encodeURIComponent(phone)}` +
+            `&a3=${encodeURIComponent(addon)}`;
+    
+          // open in a new tab
+          window.open(calendlyFullUrl, "_blank", "noopener,noreferrer");
+        });
+      });
     </script>
+
 
 </body>
 </html>
