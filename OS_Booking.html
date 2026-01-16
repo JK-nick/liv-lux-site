@@ -7,9 +7,6 @@
     <title>Book Appointment | The Olivia Experience</title>
     <link rel="stylesheet" href="OSH_Style.css">
 
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-
 </head>
 
 <body>
@@ -199,9 +196,15 @@
         
         const calendlyUrl = pickCalendlyUrl(service);
         
-        Calendly.initPopupWidget({
-            url: `${calendlyUrl}?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&a1=${encodeURIComponent(service)}&a2=${encodeURIComponent(phone)}&a3=${encodeURIComponent(addon)}`                });
-    });
+        const calendlyFullUrl =
+          `${calendlyUrl}?` +
+          `name=${encodeURIComponent(name)}` +
+          `&email=${encodeURIComponent(email)}` +
+          `&a1=${encodeURIComponent(service)}` +
+          `&a2=${encodeURIComponent(phone)}` +
+          `&a3=${encodeURIComponent(addon)}`;
+        
+        window.open(calendlyFullUrl, "_blank");
     </script>
 
 </body>
