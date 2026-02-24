@@ -355,29 +355,6 @@ li:hover {
 
 .book-btn:hover { background: #52293a; }
 
-/* Mobile: stack promo bar vertically */
-@media (max-width: 600px) {
-    .promo-bar {
-        flex-direction: column;
-        padding: 14px 20px;
-        gap: 8px;
-        text-align: center;
-    }
-
-    .promo-bar .heart-edge { display: none; }
-
-    .promo-text {
-        font-size: 20px;
-        white-space: normal;
-        line-height: 1.4;
-    }
-
-    .book-btn {
-        font-size: 18px;
-        padding: 9px 24px;
-    }
-}
-
 
 /* ------------------------------------------------------------
    9. SERVICES TABLE
@@ -609,3 +586,49 @@ footer a:hover { color: var(--gold); }
     transform-origin: top right;
 }
 
+/* ------------------------------------------------------------
+   14. MOBILE RESPONSIVE
+------------------------------------------------------------ */
+@media (max-width: 600px) {
+
+    /* Promo bar: stack vertically */
+    .promo-bar {
+        flex-direction: column;
+        padding: 14px 20px;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .promo-bar .heart-edge { display: none; }
+
+    .promo-text {
+        font-size: 20px;
+        white-space: normal;
+        line-height: 1.4;
+    }
+
+    .book-btn {
+        font-size: 18px;
+        padding: 9px 24px;
+    }
+
+    /* Nav: pill-style links that sit side by side and wrap if needed */
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        margin: 15px 0;
+        padding: 0 12px;
+    }
+
+    nav a {
+        margin: 0;
+        font-size: 1rem;
+        padding: 6px 16px;
+        border: 1px solid rgba(58, 46, 42, 0.3);
+        border-radius: 50px;
+        background: rgba(246, 242, 234, 0.6);
+        white-space: nowrap;
+    }
+}
