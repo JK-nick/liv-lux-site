@@ -355,6 +355,29 @@ li:hover {
 
 .book-btn:hover { background: #52293a; }
 
+/* Mobile: stack promo bar vertically */
+@media (max-width: 600px) {
+    .promo-bar {
+        flex-direction: column;
+        padding: 14px 20px;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .promo-bar .heart-edge { display: none; }
+
+    .promo-text {
+        font-size: 20px;
+        white-space: normal;
+        line-height: 1.4;
+    }
+
+    .book-btn {
+        font-size: 18px;
+        padding: 9px 24px;
+    }
+}
+
 
 /* ------------------------------------------------------------
    9. SERVICES TABLE
