@@ -612,23 +612,20 @@ footer a:hover { color: var(--gold); }
         padding: 9px 24px;
     }
 
-    /* Nav: pill-style links that sit side by side and wrap if needed */
+    /* Nav: shrink font + tighten spacing so all 4 links fit in one row */
     nav {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: center;
-        gap: 8px;
+        align-items: center;
+        gap: 0;
+        padding: 0 8px;
         margin: 15px 0;
-        padding: 0 12px;
     }
 
     nav a {
-        margin: 0;
+        margin: 0 8px;
         font-size: 1rem;
-        padding: 6px 16px;
-        border: 1px solid rgba(58, 46, 42, 0.3);
-        border-radius: 50px;
-        background: rgba(246, 242, 234, 0.6);
         white-space: nowrap;
     }
 }
