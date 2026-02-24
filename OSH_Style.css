@@ -1,6 +1,40 @@
-/* ----------------------------------------------------
-   1. GLOBAL BODY + BACKGROUND
----------------------------------------------------- */
+/* ============================================================
+   OSH STYLESHEET
+   Sections:
+   1. CSS Variables
+   2. Global Body + Background
+   3. Typography
+   4. Header & Navigation
+   5. Dividers
+   6. Sections (General)
+   7. Buttons
+   8. Promo Bar
+   9. Services Table
+   10. About Page
+   11. Booking Page
+   12. Footer
+   13. Utilities
+============================================================ */
+
+
+/* ------------------------------------------------------------
+   1. CSS VARIABLES
+------------------------------------------------------------ */
+:root {
+    --gold:        #D4AF37;
+    --gold-light:  #E6C670;
+    --espresso:    #3A2E2A;
+    --deep-brown:  #4B3022;
+    --charcoal:    #1C1C1C;
+    --ivory:       #F6F2EA;
+    --cream:       #FFF3E0;
+    --text-dark:   #1C1C1C;
+}
+
+
+/* ------------------------------------------------------------
+   2. GLOBAL BODY + BACKGROUND
+------------------------------------------------------------ */
 body {
     background-image: url(BOC.png);
     background-size: cover;
@@ -13,71 +47,58 @@ body {
 body::before {
     content: "";
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.25);
+    inset: 0;
+    background: rgba(246, 242, 234, 0.85);
     z-index: 0;
     pointer-events: none;
 }
 
-/* ----------------------------------------------------
-   2. TYPOGRAPHY (Global Headings + Paragraphs)
----------------------------------------------------- */
+
+/* ------------------------------------------------------------
+   3. TYPOGRAPHY
+------------------------------------------------------------ */
 h1, h2 {
     text-align: center;
-    margin-bottom: 15px;
-    margin-top: 20px;
+    margin: 20px 0 15px;
     font-family: "Playfair Display", serif;
+    color: var(--gold);
+    letter-spacing: 1px;
 }
 
-h1 {
-    font-size: 3rem;
-    letter-spacing: 1px;
-    color: #E6C670;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-}
+h1 { font-size: 3rem; }
 
 h2 {
     font-size: 2rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #E6C670;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
 }
 
 h3 {
     font-size: 1.4rem;
-    color: #F8EAD8;
+    color: var(--espresso);
     font-style: italic;
-    margin-bottom: 15px;
-    font-family: "Cormorant Garamond", serif;
 }
 
 p {
-    font-family: "Cormorant Garamond", serif;
     font-size: 1.2rem;
     line-height: 1.65;
-    color: #FFF3E0;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-    margin-top: 10px;
+    color: var(--text-dark);
 }
 
 a {
     text-decoration: none;
-    color: #E6C670;
+    color: var(--deep-brown);
     font-weight: bold;
 }
 
 a:hover {
-    color: #FFD86A;
+    color: var(--deep-brown);
     text-shadow: 0 0 6px rgba(255, 216, 106, 0.5);
 }
 
-/* ----------------------------------------------------
-   3. HEADER
----------------------------------------------------- */
+
+/* ------------------------------------------------------------
+   4. HEADER & NAVIGATION
+------------------------------------------------------------ */
 header {
     position: relative;
     z-index: 1;
@@ -86,38 +107,36 @@ header {
     color: #F8EAD8;
 }
 
-/* ----------------------------------------------------
-   4. NAVIGATION BAR
----------------------------------------------------- */
 nav {
     text-align: center;
     margin: 25px 0;
     position: relative;
-    z-index: 2; 
+    z-index: 2;
 }
 
 nav a {
     margin: 0 25px;
     font-size: 1.4rem;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 1px;
-    color: #E6C670; 
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.35);
-    transition: 0.2s ease;
+    color: var(--espresso);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35);
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
 nav a:hover {
-    color: #FFD86A;
-    transform: scale(1.08);
+    color: var(--gold);
+    transform: scale(1.05);
 }
 
-/* ----------------------------------------------------
+
+/* ------------------------------------------------------------
    5. DIVIDERS
----------------------------------------------------- */
+------------------------------------------------------------ */
 .divider {
     width: 80%;
     height: 2px;
-    background: linear-gradient(to right, transparent, #E6C670, transparent);
+    background: linear-gradient(to right, transparent, var(--gold-light), transparent);
     opacity: 0.9;
     border: none;
     margin: 10px auto;
@@ -125,44 +144,56 @@ nav a:hover {
 }
 
 @keyframes fadeInLine {
-    0% { width: 0; opacity: 0; }
-    40% { width: 60%; opacity: 0.5; }
+    0%   { width: 0;   opacity: 0; }
+    40%  { width: 60%; opacity: 0.5; }
     100% { width: 100%; opacity: 0.9; }
 }
 
-/* ----------------------------------------------------
-   6. GENERAL SECTION STYLING
----------------------------------------------------- */
+
+/* ------------------------------------------------------------
+   6. SECTIONS (General)
+------------------------------------------------------------ */
 section {
     position: relative;
     z-index: 1;
-    padding: 0px 8% 10px 8%;
-    color: #FEF9F3;
+    padding: 0 8% 10px;
     font-family: "Cormorant Garamond", serif;
     line-height: 1.6;
+    color: var(--deep-brown) !important;
+}
+
+section p,
+section ul,
+section li {
+    color: var(--deep-brown) !important;
+}
+
+section strong {
+    color: #3A241B;
 }
 
 section ul {
     list-style-type: circle;
     padding-left: 30px;
     margin-bottom: 20px;
-    color: #FFF3E0;
 }
 
 section li {
     margin-bottom: 8px;
 }
 
-section p, section ul {
+section p,
+section ul {
     margin-bottom: 14px;
 }
 
-/* Hover color effects */
-li:hover, h2:hover {
+h2:hover,
+li:hover {
     color: #FFD86A;
     transition: color 0.3s ease-in-out;
 }
 
+/* Booking CTA */
 .BookingCTA {
     text-align: center;
     margin-top: 25px;
@@ -171,33 +202,24 @@ li:hover, h2:hover {
 
 .BookingCTA p {
     max-width: 650px;
-    margin: 10px auto 25px auto;
+    margin: 10px auto 25px;
     line-height: 1.7;
 }
 
-/* ----------------------------------------------------
-   7. POLICIES SECTION
----------------------------------------------------- */
+/* Policies */
 .Policies {
     text-align: center;
 }
 
 .Policies ul {
-    text-align: left; /* bullets still clean */
+    text-align: left;
     display: inline-block;
 }
 
-.Policies h2 {
-    margin-top: 30px;
-}
+.Policies h2 { margin-top: 30px; }
+.Policies h3 { margin-top: 15px; }
 
-.Policies h3 {
-    margin-top: 15px;
-}
-
-/* ----------------------------------------------------
-   8. SERVICES SECTION
----------------------------------------------------- */
+/* Services section */
 .Services {
     text-align: center;
     margin-top: 20px;
@@ -206,37 +228,36 @@ li:hover, h2:hover {
 
 .Services h1 {
     font-size: 2.5rem;
-    color: #E6C670;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    color: var(--gold-light);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .Services p {
     max-width: 700px;
     margin: 0 auto;
     font-size: 1.2rem;
-    color: #FFF3E0;
+    color: var(--cream);
 }
 
+/* About section */
 .About {
     text-align: center;
     margin-top: 20px;
     padding-top: 10px;
 }
 
-.About h1 {
-    margin-top: 20px;
-}
+.About h1 { margin-top: 20px; }
 
 .About p {
     max-width: 700px;
-    margin: 10px auto 25px auto;
+    margin: 10px auto 25px;
     line-height: 1.7;
 }
 
 
-/* ----------------------------------------------------
-   9. BUTTONS
----------------------------------------------------- */
+/* ------------------------------------------------------------
+   7. BUTTONS
+------------------------------------------------------------ */
 .btn {
     display: inline-block;
     padding: 12px 28px;
@@ -247,42 +268,97 @@ li:hover, h2:hover {
 }
 
 .btn-outline {
-    border: 2px solid #E6C670;
-    color: #E6C670;
+    border: 2px solid var(--espresso);
+    color: var(--espresso);
+    background: transparent;
 }
 
 .btn-outline:hover {
-    background-color: #E6C670;
-    color: #083F34;
+    background-color: var(--espresso);
+    color: var(--ivory);
     transform: scale(1.05);
 }
 
-/* ----------------------------------------------------
-   10. FOOTER
----------------------------------------------------- */
-footer {
-    text-align: center;
-    color: #E6C670;
-    font-family: "Cormorant Garamond", serif;
-    padding: 30px;
-    background: rgba(0, 0, 0, 0.2);
-    border-top: 1px solid #E6C670;
-    font-size: 1rem;
-    letter-spacing: 0.5px;
+
+/* ------------------------------------------------------------
+   8. PROMO BAR
+------------------------------------------------------------ */
+.promo-bar {
     position: relative;
-    z-index: 2;
+    width: 100%;
+    padding: 18px 32px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    overflow: hidden;
+    background: linear-gradient(90deg, #f9d9df 0%, #fce8ed 30%, #fde8ee 50%, #fce8ed 70%, #f9d9df 100%);
 }
 
-footer p {
-    margin: 2px 0;
-    line-height: 1.2;
+.promo-bar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 30px 25px at 8%  50%, rgba(255,182,193,0.50) 0%, transparent 70%),
+        radial-gradient(ellipse 18px 15px at 15% 30%, rgba(255,192,203,0.40) 0%, transparent 70%),
+        radial-gradient(ellipse 22px 18px at 20% 70%, rgba(255,182,193,0.30) 0%, transparent 70%),
+        radial-gradient(ellipse 40px 35px at 50% 40%, rgba(255,200,210,0.30) 0%, transparent 70%),
+        radial-gradient(ellipse 25px 20px at 72% 60%, rgba(255,182,193,0.35) 0%, transparent 70%),
+        radial-gradient(ellipse 35px 30px at 85% 35%, rgba(255,192,203,0.40) 0%, transparent 70%),
+        radial-gradient(ellipse 20px 16px at 93% 65%, rgba(255,182,193,0.30) 0%, transparent 70%);
+    pointer-events: none;
 }
 
+.promo-bar .heart {
+    color: #e8a0b0;
+    font-size: 20px;
+    flex-shrink: 0;
+}
 
-/* ----------------------------------------------------
-   11. SERVICES TABLE STYLING
----------------------------------------------------- */
+.promo-bar .heart-edge {
+    position: absolute;
+    color: #e8a0b0;
+    font-size: 16px;
+    opacity: 0.7;
+}
 
+.promo-bar .heart-edge.left  { left:  16px; }
+.promo-bar .heart-edge.right { right: 16px; }
+
+.promo-text {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 28px;
+    color: #7a3a4a;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+}
+
+.promo-text strong { font-weight: 500; }
+
+.book-btn {
+    display: inline-block;
+    padding: 10px 28px;
+    background: #6b3a47;
+    color: #fff;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 22px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background 0.2s;
+}
+
+.book-btn:hover { background: #52293a; }
+
+
+/* ------------------------------------------------------------
+   9. SERVICES TABLE
+------------------------------------------------------------ */
 .service-table {
     margin: 25px auto;
     width: 90%;
@@ -295,12 +371,12 @@ footer p {
     background: rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(2px);
     border: 1px solid rgba(230, 198, 112, 0.3);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
 
 .service-table th {
     background: rgba(230, 198, 112, 0.25);
-    color: #E6C670;
+    color: var(--gold-light);
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 12px;
@@ -309,55 +385,55 @@ footer p {
 
 .service-table td {
     padding: 12px;
-    color: #FFF3E0;
+    color: var(--cream);
     font-size: 1.05rem;
-    border-bottom: 1px solid rgba(230,198,112,0.25);
+    border-bottom: 1px solid rgba(230, 198, 112, 0.25);
 }
 
-.service-table tr:last-child td {
-    border-bottom: none;
-}
+.service-table tr:last-child td { border-bottom: none; }
 
 .service-table tr:hover {
+    cursor: pointer;
     background: rgba(230, 198, 112, 0.08);
-    transition: 0.2s ease;
+    transition: background 0.2s ease;
 }
 
+/* Collapsible category rows */
+.collapsible {
+    cursor: pointer;
+    background: rgba(230, 198, 112, 0.18);
+    transition: background 0.2s;
+}
+
+.collapsible:hover { background: rgba(230, 198, 112, 0.25); }
+
+/* Hidden content/details rows */
+.content-row,
 .details-row {
     display: none;
-    background: rgba(255, 255, 255, 0.05);
-    border-top: 1px solid rgba(255,255,255,0.1);
 }
+
+.content-row td,
+.details-row td {
+    background: rgba(0, 0, 0, 0.18);
+    color: var(--cream);
+    border-bottom: 1px solid rgba(230, 198, 112, 0.20);
+}
+
+.content-row td { font-size: 1rem; padding: 8px 12px; }
+.content-row td:first-child { padding-left: 35px; }
 
 .details-content {
     padding: 20px;
-    color: #FFF3E0;
+    color: var(--cream);
     font-size: 1.05rem;
     line-height: 1.6;
 }
 
-.service-table tr:hover {
-    cursor: pointer;
-    background: rgba(255, 255, 255, 0.07);
-}
 
-/* Make dropdown rows look like sub-items of the category */
-.content-row td {
-  font-size: 1rem;
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
-
-/* Indent the first column (Large/Medium/etc.) under the category name */
-.content-row td:first-child {
-  padding-left: 35px;
-  opacity: 0.95;
-}
-
-/* ----------------------------------------------------
-   ABOUT PAGE STYLING
----------------------------------------------------- */
-
+/* ------------------------------------------------------------
+   10. ABOUT PAGE
+------------------------------------------------------------ */
 .AboutPage {
     text-align: center;
     padding: 20px 8%;
@@ -365,7 +441,7 @@ footer p {
 
 .about-intro {
     max-width: 700px;
-    margin: 10px auto 30px auto;
+    margin: 10px auto 30px;
     font-size: 1.2rem;
 }
 
@@ -373,33 +449,32 @@ footer p {
     max-width: 850px;
     margin: 0 auto;
     padding: 25px;
-    border: 1px solid rgba(230,198,112,0.25);
-    background: rgba(0,0,0,0.25);
+    border: 1px solid rgba(230, 198, 112, 0.25);
+    background: rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     line-height: 1.7;
     font-size: 1.15rem;
-    color: #FFF3E0;
+    color: var(--cream);
 }
 
 .about-photo {
     text-align: center;
-    margin: 30px auto 40px auto;
+    margin: 30px auto 40px;
 }
 
 .about-photo img {
     width: 260px;
     height: auto;
     border-radius: 12px;
-    border: 4px solid #E6C670; /* Gold border */
-    box-shadow: 0 0 20px rgba(230, 198, 112, 0.45); /* Gold glow */
+    border: 4px solid var(--gold-light);
+    box-shadow: 0 0 20px rgba(230, 198, 112, 0.45);
     object-fit: cover;
 }
 
 
-/* ----------------------------------------------------
-   BOOKING PAGE STYLING
----------------------------------------------------- */
-
+/* ------------------------------------------------------------
+   11. BOOKING PAGE
+------------------------------------------------------------ */
 .BookingPage {
     text-align: center;
     padding: 20px 8%;
@@ -407,7 +482,7 @@ footer p {
 
 .booking-intro {
     max-width: 700px;
-    margin: 10px auto 30px auto;
+    margin: 10px auto 30px;
     font-size: 1.2rem;
 }
 
@@ -415,16 +490,16 @@ footer p {
     max-width: 600px;
     margin: 0 auto;
     text-align: left;
-    background: rgba(0,0,0,0.25);
+    background: rgba(0, 0, 0, 0.25);
     padding: 25px 30px;
     border-radius: 10px;
-    border: 1px solid rgba(230,198,112,0.25);
+    border: 1px solid rgba(230, 198, 112, 0.25);
 }
 
 .booking-form label {
     display: block;
     margin-top: 15px;
-    color: #E6C670;
+    color: var(--gold-light);
     font-family: "Playfair Display", serif;
     font-size: 1.1rem;
 }
@@ -443,7 +518,7 @@ footer p {
 .deposit-note {
     margin-top: 15px;
     font-size: 1.05rem;
-    color: #FFF3E0;
+    color: var(--cream);
 }
 
 .checkbox {
@@ -453,164 +528,61 @@ footer p {
     gap: 10px;
 }
 
-.centered {
+/* Add-ons */
+.addon-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.addon-row input[type="checkbox"] { margin: 0; }
+
+.addons-list label {
+    display: block;
+    margin-bottom: 1px;
+}
+
+.addons-list input[type="checkbox"] { margin-right: 10px; }
+
+
+/* ------------------------------------------------------------
+   12. FOOTER
+------------------------------------------------------------ */
+footer {
     text-align: center;
-}
-
-/* Hidden rows */
-.content-row {
-    display: none;
-    background: rgba(255, 255, 255, 0.05);
-}
-
-/* Clickable category row */
-.collapsible {
-    cursor: pointer;
-    background: rgba(230, 198, 112, 0.15);
-    transition: 0.2s;
-}
-
-.collapsible:hover {
-    background: rgba(230, 198, 112, 0.25);
-}
-
-/* Match dropdown row background to main table rows */
-.content-row td,
-.details-row td {
-    background: rgba(0, 0, 0, 0.18); /* same tone as main table rows */
-    color: #FFF3E0;                 /* same text color */
-    border-bottom: 1px solid rgba(230,198,112,0.20);
-}
-
-.collapsible {
-    background: rgba(230, 198, 112, 0.18); /* gold-tinted header row */
-}
-
-.collapsible:hover {
-    background: rgba(230, 198, 112, 0.25);
-}
-
-/* ----------------------------------------------------
-   12. MOBILE / RESPONSIVE FIXES
----------------------------------------------------- */
-* {
-  box-sizing: border-box;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* iOS + mobile browsers hate fixed backgrounds (janky/zoomed) */
-@media (max-width: 768px) {
-  body {
-    background-attachment: scroll;
-    background-position: center top;
-  }
-
-  section {
-    padding: 0 5% 10px 5%;
-  }
-
-  nav {
-    margin: 14px 0;
-  }
-
-  nav a {
-    display: inline-block;
-    margin: 8px 10px;
-    font-size: 1.05rem;
-  }
-
-  h1 {
-    font-size: 2.1rem;
-    line-height: 1.15;
-    margin-top: 16px;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  p {
-    font-size: 1.05rem;
-    line-height: 1.55;
-  }
-
-  /* Make tables usable on phones */
-  .service-table {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .service-table table {
-    min-width: 680px; /* forces horizontal scroll instead of crushing columns */
-  }
-
-  .service-table th,
-  .service-table td {
-    padding: 10px;
-    font-size: 0.95rem;
-    white-space: nowrap; /* stops awkward wrapping */
-  }
-
-  /* Booking form spacing */
-  .booking-form {
-    width: 100%;
-    padding: 18px 16px;
-  }
-
-  .booking-form input,
-  .booking-form select {
+    padding: 30px;
+    background: var(--charcoal);
+    border-top: 2px solid var(--gold);
+    font-family: "Cormorant Garamond", serif;
     font-size: 1rem;
-  }
-
-  .btn {
-    width: 100%;
-    text-align: center;
-    padding: 12px 18px;
-  }
-
-  footer {
-    padding: 18px 12px;
-    font-size: 0.95rem;
-  }
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 2;
 }
 
-/* Extra-small phones */
-@media (max-width: 420px) {
-  nav a {
-    font-size: 1rem;
-    margin: 7px 8px;
-  }
+footer p { margin: 2px 0; line-height: 1.2; }
 
-  h1 {
-    font-size: 1.85rem;
-  }
+footer,
+footer p,
+footer a { color: var(--ivory); }
 
-  h2 {
-    font-size: 1.35rem;
-  }
+footer a:hover { color: var(--gold); }
 
-  .service-table table {
-    min-width: 620px;
-  }
-}
+
+/* ------------------------------------------------------------
+   13. UTILITIES
+------------------------------------------------------------ */
+.centered { text-align: center; }
 
 .corner-sticker {
-  position: fixed;          /* stays in corner even when scrolling */
-  top: 20px;                /* distance from top */
-  right: 20px;              /* distance from right */
-  width: 120px;             /* controls size */
-  height: auto;             /* keeps proportions */
-  z-index: 1000;            /* keeps it above everything */
-  pointer-events: none;     /* prevents blocking clicks */
-
-
-  transform: scale(1.25);   /* 👈 makes it 25% bigger */
-  transform-origin: top right;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 120px;
+    height: auto;
+    z-index: 1000;
+    pointer-events: none;
+    transform: scale(1.25);
+    transform-origin: top right;
 }
 
