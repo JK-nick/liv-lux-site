@@ -871,24 +871,123 @@ li:hover {
    12. FOOTER
 ------------------------------------------------------------ */
 footer {
-    text-align: center;
-    padding: 30px;
     background: var(--charcoal);
-    border-top: 2px solid var(--gold);
+    border-top: 1px solid rgba(201, 168, 76, 0.3);
     font-family: "Cormorant Garamond", serif;
-    font-size: 1rem;
-    letter-spacing: 0.5px;
     position: relative;
     z-index: 2;
+    padding: 0;
 }
 
-footer p { margin: 2px 0; line-height: 1.2; }
+.footer-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 36px 8% 28px;
+}
 
-footer,
-footer p,
-footer a { color: var(--ivory); }
+/* Left — logo + branding */
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 0 0 240px;
+    padding-right: 40px;
+}
 
-footer a:hover { color: var(--gold); }
+.footer-logo {
+    width: 200px;
+    height: auto;
+    mix-blend-mode: lighten;
+    margin: 0;
+}
+
+/* Vertical divider */
+.footer-divider-v {
+    width: 1px;
+    height: 160px;
+    background: linear-gradient(to bottom, transparent, var(--gold-light), transparent);
+    opacity: 0.5;
+    flex-shrink: 0;
+}
+
+/* Right — contact info */
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-left: 40px;
+}
+
+.footer-contact-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--ivory);
+    font-size: 0.98rem;
+    letter-spacing: 0.3px;
+}
+
+.footer-contact-row i {
+    color: var(--gold);
+    font-size: 15px;
+    width: 18px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.footer-contact-row a {
+    color: var(--ivory);
+    text-decoration: none;
+    font-weight: normal;
+    transition: color 0.2s ease;
+}
+
+.footer-contact-row a:hover {
+    color: var(--gold);
+    text-shadow: none;
+}
+
+/* Bottom copyright bar */
+.footer-bottom {
+    border-top: 1px solid rgba(201, 168, 76, 0.25);
+    padding: 14px 8%;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: rgba(230, 198, 112, 0.65);
+    letter-spacing: 0.5px;
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+    .footer-main {
+        flex-direction: column;
+        gap: 28px;
+        padding: 32px 8% 24px;
+    }
+
+    .footer-brand {
+        flex: none;
+        padding-right: 0;
+    }
+
+    .footer-divider-v {
+        width: 80px;
+        height: 1px;
+        background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+    }
+
+    .footer-contact {
+        padding-left: 0;
+        align-items: center;
+    }
+}
 
 
 /* ------------------------------------------------------------
