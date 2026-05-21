@@ -898,10 +898,12 @@ footer {
 }
 
 .footer-logo {
-    width: 200px;
+    width: 160px;
     height: auto;
     mix-blend-mode: lighten;
     margin: 0;
+    /* The Canva export has large empty padding around the monogram.
+       If it still looks too big, reduce width further (try 120px or 100px) */
 }
 
 /* Vertical divider */
