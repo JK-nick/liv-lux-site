@@ -718,11 +718,12 @@ li:hover {
     white-space: nowrap;
 }
 
-/* Bottom CTA */
 .svc-cta {
     text-align: center;
     margin-top: 40px;
-    padding-top: 10px;
+    padding: 10px 8% 40px;
+    position: relative;
+    z-index: 1;
 }
 
 .svc-cta p {
