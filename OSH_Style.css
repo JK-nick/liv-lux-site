@@ -507,92 +507,249 @@ li:hover {
 .book-btn:hover { background: #52293a; }
 
 
-/* ------------------------------------------------------------
-   9. SERVICES TABLE
------------------------------------------------------------- */
-.service-table {
-    margin: 25px auto;
-    width: 90%;
-    max-width: 1100px;
+/* ============================================================
+   OS_Services.css — Services page styles
+   Matches the clean cream/gold table layout
+============================================================ */
+
+/* Page background override — light cream, not the dark overlay */
+.services-page {
+    background-image: url('BOC.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
-.service-table table {
+.services-page::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(250, 246, 240, 0.93);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Page section */
+.svc-page {
+    position: relative;
+    z-index: 1;
+    padding: 20px 5% 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Title */
+.svc-main-title {
+    font-family: "Playfair Display", serif;
+    font-size: 2.8rem;
+    color: var(--gold);
+    text-align: center;
+    margin: 20px 0 6px;
+    letter-spacing: 1px;
+}
+
+.svc-title-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 4px 0 14px;
+}
+
+.svc-title-divider hr {
+    flex: 1;
+    max-width: 120px;
+    border: none;
+    border-top: 1.5px solid var(--gold-light);
+    opacity: 0.8;
+}
+
+.svc-title-divider span {
+    color: var(--gold);
+    font-size: 18px;
+}
+
+.svc-subtitle {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--espresso);
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+/* Each category block */
+.svc-block {
+    margin-bottom: 28px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+/* Gold category header bar */
+.svc-category-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gold);
+    padding: 12px 18px;
+}
+
+.svc-cat-icon {
+    font-size: 16px;
+    color: #fff;
+    opacity: 0.9;
+}
+
+.svc-cat-name {
+    font-family: "Playfair Display", serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+/* Table */
+.svc-table {
     width: 100%;
     border-collapse: collapse;
-    background: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(2px);
-    border: 1px solid rgba(230, 198, 112, 0.3);
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    background: #fff;
 }
 
-.service-table th {
-    background: rgba(230, 198, 112, 0.25);
-    color: var(--gold-light);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 12px;
+/* Column header row */
+.svc-col-headers th {
     font-family: "Playfair Display", serif;
-}
-
-.service-table td {
-    padding: 12px;
-    color: var(--ivory);
-    font-size: 1.05rem;
-    border-bottom: 1px solid rgba(230, 198, 112, 0.25);
-}
-
-/* Service name — first column */
-.service-table td:first-child {
+    font-size: 0.85rem;
     font-weight: 700;
-    font-size: 1.08rem;
-    color: #fff;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.5px;
+    color: var(--deep-brown);
+    padding: 10px 16px;
+    text-align: left;
+    background: #faf6f0;
+    border-bottom: 1.5px solid rgba(180, 130, 60, 0.2);
 }
 
-/* Price — third column */
-.service-table td:nth-child(3) {
+/* Parent (summary) rows — clickable */
+.svc-parent {
+    cursor: pointer;
+    background: #fff;
+    transition: background 0.15s ease;
+}
+
+.svc-parent:not(.no-expand):hover {
+    background: #fdf8f2;
+}
+
+.svc-parent td {
+    padding: 13px 16px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1rem;
+    color: var(--espresso);
+    border-bottom: 1px solid rgba(180, 130, 60, 0.12);
+}
+
+/* First column — service name, bold */
+.svc-parent td:first-child {
     font-weight: 700;
-    color: var(--gold-light);
+    font-size: 1.02rem;
+    color: var(--deep-brown);
 }
 
-.service-table tr:last-child td { border-bottom: none; }
-
-.service-table tr:hover {
-    cursor: pointer;
-    background: rgba(230, 198, 112, 0.08);
-    transition: background 0.2s ease;
+/* Price column */
+.svc-parent td:nth-child(3) {
+    font-weight: 700;
+    color: var(--deep-brown);
+    white-space: nowrap;
 }
 
-/* Collapsible category rows */
-.collapsible {
-    cursor: pointer;
-    background: rgba(230, 198, 112, 0.18);
-    transition: background 0.2s;
+/* Time column */
+.svc-parent td:nth-child(4) {
+    white-space: nowrap;
+    color: #888;
+    font-size: 0.95rem;
 }
 
-.collapsible:hover { background: rgba(230, 198, 112, 0.25); }
+/* Expand indicator on clickable rows */
+.svc-parent:not(.no-expand) td:first-child::after {
+    content: " ›";
+    color: var(--gold);
+    font-weight: 400;
+    transition: transform 0.2s ease;
+    display: inline-block;
+}
 
-/* Hidden content/details rows */
-.content-row,
-.details-row {
+.svc-parent.expanded td:first-child::after {
+    content: " ‹";
+}
+
+/* Child (size breakdown) rows — hidden by default */
+.svc-child {
     display: none;
+    background: #faf6f0;
 }
 
-.content-row td,
-.details-row td {
-    background: rgba(0, 0, 0, 0.18);
-    color: var(--cream);
-    border-bottom: 1px solid rgba(230, 198, 112, 0.20);
+.svc-child.open {
+    display: table-row;
 }
 
-.content-row td { font-size: 1rem; padding: 8px 12px; }
-.content-row td:first-child { padding-left: 35px; }
+.svc-child td {
+    padding: 10px 16px 10px 28px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 0.95rem;
+    color: var(--espresso);
+    border-bottom: 1px solid rgba(180, 130, 60, 0.08);
+}
 
-.details-content {
-    padding: 20px;
-    color: var(--cream);
-    font-size: 1.05rem;
-    line-height: 1.6;
+.svc-child td:first-child {
+    color: var(--deep-brown);
+    font-style: italic;
+}
+
+.svc-child td:nth-child(3) {
+    font-weight: 700;
+    color: var(--deep-brown);
+    white-space: nowrap;
+}
+
+.svc-child td:nth-child(4) {
+    color: #888;
+    font-size: 0.92rem;
+    white-space: nowrap;
+}
+
+/* Bottom CTA */
+.svc-cta {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 10px;
+}
+
+.svc-cta p {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.1rem;
+    color: var(--espresso);
+    margin-bottom: 16px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .svc-table thead { display: none; }
+
+    .svc-parent td,
+    .svc-child td {
+        display: block;
+        padding: 6px 14px;
+        border: none;
+    }
+
+    .svc-parent td:first-child,
+    .svc-child td:first-child { font-size: 1rem; padding-top: 12px; }
+
+    .svc-parent td:last-child,
+    .svc-child td:last-child { padding-bottom: 12px; }
+
+    .svc-block { margin-bottom: 20px; }
 }
 
 
