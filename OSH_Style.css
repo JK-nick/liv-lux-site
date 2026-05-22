@@ -800,61 +800,126 @@ li:hover {
 ------------------------------------------------------------ */
 .BookingPage {
     text-align: center;
-    padding: 20px 8%;
+    padding: 20px 5% 50px;
 }
 
 .booking-intro {
-    max-width: 700px;
-    margin: 10px auto 30px;
-    font-size: 1.2rem;
-}
-
-.booking-form {
     max-width: 600px;
+    margin: 10px auto 30px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.05rem;
+    color: var(--espresso);
+    line-height: 1.7;
+}
+
+.booking-form-new {
+    max-width: 700px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
     text-align: left;
-    background: rgba(0, 0, 0, 0.25);
-    padding: 25px 30px;
-    border-radius: 10px;
-    border: 1px solid rgba(230, 198, 112, 0.25);
 }
 
-.booking-form label {
-    display: block;
-    margin-top: 15px;
-    color: var(--gold-light);
-    font-family: "Playfair Display", serif;
-    font-size: 1.1rem;
-}
-
-.booking-form input,
-.booking-form select {
-    width: 100%;
-    margin-top: 5px;
-    padding: 10px;
+.booking-card {
     border-radius: 6px;
-    border: none;
-    outline: none;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+.booking-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gold);
+    padding: 12px 18px;
+}
+
+.booking-card-icon {
+    font-size: 15px;
+    color: #fff;
+    opacity: 0.9;
+}
+
+.booking-card-title {
+    font-family: "Playfair Display", serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.booking-card-body {
+    background: #fff;
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.booking-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(180, 130, 60, 0.1);
+}
+
+.booking-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.booking-label {
+    font-family: "Playfair Display", serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--deep-brown);
+}
+
+.booking-form-new input[type="text"],
+.booking-form-new input[type="email"],
+.booking-form-new input[type="tel"],
+.booking-form-new select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid rgba(180, 130, 60, 0.25);
+    border-radius: 8px;
+    font-family: "Cormorant Garamond", serif;
     font-size: 1rem;
+    color: var(--espresso);
+    background: #fff;
+    outline: none;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+.booking-form-new input:focus,
+.booking-form-new select:focus {
+    border-color: var(--gold);
 }
 
 .deposit-note {
-    margin-top: 15px;
-    font-size: 1.05rem;
-    color: var(--cream);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1rem;
+    color: var(--espresso);
+    margin: 0 0 14px;
+    line-height: 1.6;
 }
 
 .checkbox {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-top: 12px;
+    margin: 0 0 4px;
 }
 
 .checkbox input[type="checkbox"] {
     width: 16px;
     height: 16px;
-    accent-color: var(--espresso);
+    accent-color: var(--gold);
     flex-shrink: 0;
     margin: 0;
     cursor: pointer;
@@ -863,26 +928,10 @@ li:hover {
 .checkbox label {
     font-family: "Cormorant Garamond", serif;
     font-size: 1rem;
-    color: var(--gold-light);
+    color: var(--gold);
     margin: 0;
     cursor: pointer;
 }
-
-/* Add-ons */
-.addon-row {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.addon-row input[type="checkbox"] { margin: 0; }
-
-.addons-list label {
-    display: block;
-    margin-bottom: 1px;
-}
-
-.addons-list input[type="checkbox"] { margin-right: 10px; }
 
 
 /* ------------------------------------------------------------
