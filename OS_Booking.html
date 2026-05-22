@@ -24,111 +24,121 @@
     <!-- BOOKING FORM -->
     <section class="BookingPage">
         <h1>Book an Appointment</h1>
+        <div class="svc-title-divider"><hr><span>❧</span><hr></div>
 
         <p class="booking-intro">
             Fill out the form below to request your braid appointment.
             Once submitted, you will receive a follow-up message confirming your date and deposit details.
         </p>
 
-        <form class="booking-form" id="bookingForm">
-            
-            <label>Full Name</label>
-            <input type="text" name="fullName" placeholder="Enter your name" required>
+        <form class="booking-form-new" id="bookingForm">
 
-            <label>Email Address</label>
-            <input type="email" name="email" placeholder="Enter your email" required>
+            <!-- CARD 1: Booking Details -->
+            <div class="booking-card">
+                <div class="booking-card-header">
+                    <span class="booking-card-icon">✾</span>
+                    <span class="booking-card-title">Booking Details</span>
+                </div>
+                <div class="booking-card-body">
 
-            <label>Phone Number</label>
-            <input type="tel" name="phone" placeholder="Enter your phone number" required>
+                    <div class="booking-row">
+                        <label class="booking-label">Full Name</label>
+                        <input type="text" name="fullName" placeholder="Enter your name" required>
+                    </div>
 
-            <label>Select Service</label>
-            
-            <select name="service" required>
-              <option value="" disabled selected>Select a service</option>
-            
-              <optgroup label="BRAIDS">
-                <option value="Knotless Braids — Large">Knotless Braids — Large</option>
-                <option value="Knotless Braids — Medium">Knotless Braids — Medium</option>
-                <option value="Knotless Braids — Smedium">Knotless Braids — Smedium</option>
-                <option value="Knotless Braids — Small">Knotless Braids — Small</option>
-                <option value="Knotless Braids — Small">Knotless Braids — Extra Small</option>
-            
-                <option value="Knotless Bob — Medium">Knotless Bob — Medium</option>
-                <option value="Knotless Bob — Smedium">Knotless Bob — Smedium</option>
-                <option value="Knotless Bob — Small">Knotless Bob — Small</option>
-            
-                <option value="Fulani / Tribal Braids — Medium">Fulani / Tribal Braids — Medium</option>
-                <option value="Fulani / Tribal Braids — Smedium">Fulani / Tribal Braids — Smedium</option>
-                <option value="Fulani / Tribal Braids — Small">Fulani / Tribal Braids — Small</option>
-            
-                <option value="Stitch / Feed-In Braids — 4–6 Stitch Braids">Stitch / Feed-In Braids — 4–6 Stitch Braids</option>
-                <option value="Stitch / Feed-In Braids — 8 Stitch Braids">Stitch / Feed-In Braids — 8 Stitch Braids</option>
-                <option value="Stitch / Feed-In Braids — 10 Stitch Braids">Stitch / Feed-In Braids — 10 Stitch Braids</option>
-                <option value="Stitch / Feed-In Braids — Alicia Keys Braids (Smedium)">Stitch / Feed-In Braids — Alicia Keys Braids (Smedium)</option>
-                <option value="Stitch / Feed-In Braids — Alicia Keys Braids (Small)">Stitch / Feed-In Braids — Alicia Keys Braids (Small)</option>
-              </optgroup>
-            
-              <optgroup label="TWISTS">
-                <option value="Passion Twists — Medium">Passion Twists — Medium</option>
-                <option value="Passion Twists — Smedium">Passion Twists — Smedium</option>
-                <option value="Passion Twists — Small">Passion Twists — Small</option>
-            
-                <option value="Island Twists — Medium">Island Twists — Medium</option>
-                <option value="Island Twists — Smedium">Island Twists — Smedium</option>
-                <option value="Island Twists — Small">Island Twists — Small</option>
-            
-                <option value="Fulani Twists — Medium">Fulani Twists — Medium</option>
-                <option value="Fulani Twists — Smedium">Fulani Twists — Smedium</option>
-                <option value="Fulani Twists — Small">Fulani Twists — Small</option>
-              </optgroup>
-            
-              <optgroup label="CURL BRAIDS">
-                <option value="French Curl Braids — Large">French Curl Braids — Large</option>
-                <option value="French Curl Braids — Medium">French Curl Braids — Medium</option>
-                <option value="French Curl Braids — Smedium">French Curl Braids — Smedium</option>
-                <option value="French Curl Braids — Small">French Curl Braids — Small</option>
-              </optgroup>
-            
-              <optgroup label="LOCS">
-                <option value="Loc Styles — Soft Locs">Loc Styles — Soft Locs</option>
-                <option value="Loc Styles — Distressed Locs">Loc Styles — Distressed Locs</option>
-              </optgroup>
-            
-              <optgroup label="NATURAL HAIR">
-                <option value="Natural Braids">Natural Braids</option>
-                <option value="Two-strand Twists">Two-strand Twists</option>
-              </optgroup>
-            
-              <optgroup label="OTHER">
-                <option value="Consultation / Not sure yet">Consultation / Not sure yet</option>
-              </optgroup>
-            </select>
+                    <div class="booking-row">
+                        <label class="booking-label">Email Address</label>
+                        <input type="email" name="email" placeholder="Enter your email" required>
+                    </div>
 
-            <label>Optional Add-ons</label>
-            
-            <select name="addons">
-              <option value="No add-on" selected>No add-on</option>
-            
-              <optgroup label="ADD-ONS">
-                <option value="Boho Pieces">Boho Pieces</option>
-                <option value="Curly Ends">Curly Ends</option>
-                <option value="Extra Length">Extra Length</option>
-              </optgroup>
-            </select>
+                    <div class="booking-row">
+                        <label class="booking-label">Phone Number</label>
+                        <input type="tel" name="phone" placeholder="Enter your phone number" required>
+                    </div>
 
-            <p class="deposit-note">
-                A $20 non-refundable deposit is required to secure your appointment.
-            </p>
+                    <div class="booking-row">
+                        <label class="booking-label">Select Service</label>
+                        <select name="service" required>
+                          <option value="" disabled selected>Select a service</option>
+                          <optgroup label="BRAIDS">
+                            <option value="Knotless Braids — Large">Knotless Braids — Large</option>
+                            <option value="Knotless Braids — Medium">Knotless Braids — Medium</option>
+                            <option value="Knotless Braids — Smedium">Knotless Braids — Smedium</option>
+                            <option value="Knotless Braids — Small">Knotless Braids — Small</option>
+                            <option value="Knotless Braids — Extra Small">Knotless Braids — Extra Small</option>
+                            <option value="Knotless Bob — Medium">Knotless Bob — Medium</option>
+                            <option value="Knotless Bob — Smedium">Knotless Bob — Smedium</option>
+                            <option value="Knotless Bob — Small">Knotless Bob — Small</option>
+                            <option value="Fulani / Tribal Braids — Medium">Fulani / Tribal Braids — Medium</option>
+                            <option value="Fulani / Tribal Braids — Smedium">Fulani / Tribal Braids — Smedium</option>
+                            <option value="Fulani / Tribal Braids — Small">Fulani / Tribal Braids — Small</option>
+                            <option value="Stitch / Feed-In Braids — 4–6 Stitch Braids">Stitch / Feed-In Braids — 4–6 Stitch Braids</option>
+                            <option value="Stitch / Feed-In Braids — 8 Stitch Braids">Stitch / Feed-In Braids — 8 Stitch Braids</option>
+                            <option value="Stitch / Feed-In Braids — 10 Stitch Braids">Stitch / Feed-In Braids — 10 Stitch Braids</option>
+                            <option value="Stitch / Feed-In Braids — Alicia Keys Braids (Smedium)">Stitch / Feed-In Braids — Alicia Keys (Smedium)</option>
+                            <option value="Stitch / Feed-In Braids — Alicia Keys Braids (Small)">Stitch / Feed-In Braids — Alicia Keys (Small)</option>
+                          </optgroup>
+                          <optgroup label="TWISTS">
+                            <option value="Passion Twists — Medium">Passion Twists — Medium</option>
+                            <option value="Passion Twists — Smedium">Passion Twists — Smedium</option>
+                            <option value="Passion Twists — Small">Passion Twists — Small</option>
+                            <option value="Island Twists — Medium">Island Twists — Medium</option>
+                            <option value="Island Twists — Smedium">Island Twists — Smedium</option>
+                            <option value="Island Twists — Small">Island Twists — Small</option>
+                            <option value="Fulani Twists — Medium">Fulani Twists — Medium</option>
+                            <option value="Fulani Twists — Smedium">Fulani Twists — Smedium</option>
+                            <option value="Fulani Twists — Small">Fulani Twists — Small</option>
+                          </optgroup>
+                          <optgroup label="CURL BRAIDS">
+                            <option value="French Curl Braids — Large">French Curl Braids — Large</option>
+                            <option value="French Curl Braids — Medium">French Curl Braids — Medium</option>
+                            <option value="French Curl Braids — Smedium">French Curl Braids — Smedium</option>
+                            <option value="French Curl Braids — Small">French Curl Braids — Small</option>
+                          </optgroup>
+                          <optgroup label="LOCS">
+                            <option value="Loc Styles — Soft Locs">Loc Styles — Soft Locs</option>
+                            <option value="Loc Styles — Distressed Locs">Loc Styles — Distressed Locs</option>
+                          </optgroup>
+                          <optgroup label="NATURAL HAIR">
+                            <option value="Natural Braids">Natural Braids</option>
+                            <option value="Two-strand Twists">Two-strand Twists</option>
+                          </optgroup>
+                          <optgroup label="OTHER">
+                            <option value="Consultation / Not sure yet">Consultation / Not sure yet</option>
+                          </optgroup>
+                        </select>
+                    </div>
 
-            <div class="checkbox">
-                <input type="checkbox" id="policiesAgreed" required>
-                <label for="policiesAgreed">I have read and agree to the booking policies.</label>
+                    <div class="booking-row">
+                        <label class="booking-label">Optional Add-ons</label>
+                        <select name="addons">
+                          <option value="No add-on" selected>No add-on</option>
+                          <optgroup label="ADD-ONS">
+                            <option value="Boho Pieces">Boho Pieces</option>
+                            <option value="Curly Ends">Curly Ends</option>
+                            <option value="Extra Length">Extra Length</option>
+                          </optgroup>
+                        </select>
+                    </div>
+
+                </div>
             </div>
 
-
-            <button type="submit" class="btn btn-outline">
-                Submit Request
-            </button>
+            <!-- CARD 2: Important -->
+            <div class="booking-card">
+                <div class="booking-card-header">
+                    <span class="booking-card-icon">✾</span>
+                    <span class="booking-card-title">Important</span>
+                </div>
+                <div class="booking-card-body">
+                    <p class="deposit-note">A $20 non-refundable deposit is required to secure your appointment.</p>
+                    <div class="checkbox">
+                        <input type="checkbox" id="policiesAgreed" required>
+                        <label for="policiesAgreed">I have read and agree to the booking policies.</label>
+                    </div>
+                    <button type="submit" class="btn btn-outline" style="margin-top: 20px;">Submit Request</button>
+                </div>
+            </div>
 
         </form>
     </section>
